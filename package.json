@@ -1,0 +1,46 @@
+{
+    "name": "@galste/roulette",
+    "version": "0.0.1",
+    "description": "Weighted roulette-wheel random selection utility",
+    "main": "dist/index.js",
+    "browser": "dist/index.min.js",
+    "types": "dist/index.d.ts",
+    "engines": {
+        "node": ">=14.5.0"
+    },
+    "scripts": {
+        "build-browser": "esbuild src/index.ts --bundle --outfile=dist/index.min.js --target=chrome63,firefox57,safari12,edge79 --minify --format=iife --global-name=roulette",
+        "build-cjs": "esbuild src/index.ts --bundle --outfile=dist/index.js --target=node14.5 --sourcemap --format=cjs --keep-names",
+        "build": "npm run clean && npm run emitTypes && npm run build-browser && npm run build-cjs",
+        "emitTypes": "tsc -p .",
+        "clean": "rimraf dist",
+        "prepublishOnly": "npm run build && npm test",
+        "test": "jest --coverage"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Galste/roulette.git"
+    },
+    "keywords": [
+        "random",
+        "roulette",
+        "weight"
+    ],
+    "author": "Gal Steinberg <gal@glidingdeer.com>",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/Galste/roulette/issues"
+    },
+    "homepage": "https://github.com/Galste/roulette#readme",
+    "devDependencies": {
+        "@types/node": "16.11.11",
+        "@typescript-eslint/eslint-plugin": "5.5.0",
+        "@typescript-eslint/parser": "5.5.0",
+        "esbuild": "0.14.1",
+        "eslint": "8.3.0",
+        "eslint-plugin-jest": "25.3.0",
+        "jest": "27.4.3",
+        "rimraf": "3.0.2",
+        "typescript": "4.5.2"
+    }
+}

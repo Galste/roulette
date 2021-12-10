@@ -1,2 +1,2 @@
 # roulette
-Weighted roulette-wheel random selection utility 
+Weighted roulette-wheel random selection utility

@@ -1,0 +1,43 @@
+{
+    "root": true,
+    "extends": [
+        "eslint:recommended",
+        "plugin:jest/recommended"
+    ],
+    "plugins": ["jest"],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "env": {
+        "jest/globals": true,
+        "node": true
+    },
+    "rules": {
+        "jest/no-focused-tests": 2,
+        "jest/no-identical-title": 2,
+        "jest/valid-expect": 2,
+        "no-var": 2,
+        "no-implicit-globals": 2,
+        "no-shadow": 2,
+        "semi": 2,
+        "no-throw-literal": 2,
+        "no-cond-assign": [2, "except-parens"],
+
+        "jest/no-disabled-tests": 1,
+        "jest/prefer-to-have-length": 1,
+        "quotes": [1, "single"],
+        "no-trailing-spaces": 1,
+        "max-len": [1, 160],
+        "no-useless-rename": 1,
+        "comma-dangle": [1, {
+            "objects": "always-multiline",
+            "arrays": "always-multiline",
+            "imports": "always-multiline",
+            "exports": "always-multiline",
+            "functions": "always-multiline"
+        }],
+        "arrow-parens": [1, "always"],
+        "indent": [1, 4],
+        "no-unused-vars": [1, {"argsIgnorePattern": "^_", "varsIgnorePattern": "^_"}]
+    }
+}
